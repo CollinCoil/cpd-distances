@@ -1,0 +1,4 @@
+python==3.7.16
+statistical-distance==0.9.1
+numpy==1.21.6
+hyperopt==0.2.7
