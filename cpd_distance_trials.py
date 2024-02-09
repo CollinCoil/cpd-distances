@@ -113,6 +113,7 @@ def load_data(data_path):
     true_changes = [9000, 15487, 24487, 33487]
     return true_changes, data
 
+# Most metrics are borrowed from Turing Change Points Detection Benchmark
 
 def true_positives(T, X, margin=5):
     # make a copy so we don't affect the caller
@@ -260,7 +261,7 @@ distance_measures = [distance.acc, distance.add_chisq, distance.bhattacharyya, d
                      distance.penroseshape, distance.soergel, distance.squared_chisq, distance.squaredchord, distance.taneja, 
                      distance.tanimoto, distance.topsoe, distance.vicis_symmetric_chisq, distance.vicis_wave_hedges, distance.wave_hedges]
 # Note: Cosine distance does not work, dice distance does not work, jaccard distance does not work
-# kumarjohnosn distance does not work, maryland bridge distance does not work, squared euclidean does not work
+# kumarjohnson distance does not work, maryland bridge distance does not work, squared euclidean does not work
 
 
 
