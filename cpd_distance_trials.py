@@ -105,12 +105,17 @@ def load_data(data_path):
     train = cdr.train_tasks
 
     unique_task = []
+    true_changes = []
+    data_index = 0
     for train_task in train:
         # print(train_task.data.shape)
         unique_task.append(train_task.data)
-    data = np.vstack(unique_task)
+    
+        data_index += train_task.data.shape[0]
+        true_changes.append(data_index)
 
-    true_changes = [9000, 15487, 24487, 33487]
+    true_changes.pop() # Removing last element if list that signals end of dataset
+    data = np.vstack(unique_task)
     return true_changes, data
 
 # Most metrics are borrowed from Turing Change Points Detection Benchmark
