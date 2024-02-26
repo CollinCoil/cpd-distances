@@ -54,7 +54,7 @@ def iterate_batches(points, batch_size):
         yield sample
 
 
-class modular_detector:
+class ModularDetector:
     def __init__(self, threshold=3, new_dist_buffer_size=3, batch_size=3, max_dist_size=0, dist_metric = distance.euclidean, DEBUG=False):
         self.threshold_ratio = threshold
         self.max_dist_size = max_dist_size
@@ -246,7 +246,7 @@ def scoring_function(params):
     data_path = params["data"]
     true_changes, X = load_data(data_path)
     true_changes_dict = {1 : true_changes}
-    detector = modular_detector(batch_size = params["batch size"], threshold=params['threshold'], max_dist_size=0, dist_metric = params["metric"], new_dist_buffer_size=params["batch size"]*3)
+    detector = ModularDetector(batch_size = params["batch size"], threshold=params['threshold'], max_dist_size=0, dist_metric = params["metric"], new_dist_buffer_size=params["batch size"]*3)
     locations = detector.detect(X)
     return f_measure(true_changes_dict, locations, margin = params["batch size"]//2) + covering(true_changes_dict, locations, X.shape[0])
 
@@ -285,7 +285,7 @@ def main(data_path = None, batch_size = 3):
         results = fmin(f, param_space, algo=tpe.suggest, max_evals=100, trials=trials, loss_threshold=-1.9)
 
         # running best model
-        detector = modular_detector(batch_size = batch_size, threshold=results["threshold"], max_dist_size=0, dist_metric = metric, new_dist_buffer_size=batch_size*3)
+        detector = ModularDetector(batch_size = batch_size, threshold=results["threshold"], max_dist_size=0, dist_metric = metric, new_dist_buffer_size=batch_size*3)
         start = time.time()
         locations = detector.detect(X)
         end = time.time()
