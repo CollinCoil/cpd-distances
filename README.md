@@ -13,19 +13,13 @@ The code used to run the change point detection experiments is in the `cpd_dista
 A recommended citation is 
 
 @InProceedings{10.1007/978-3-031-62700-2_23,
-author="Coil, Collin
-and Corizzo, Roberto",
-editor="Appice, Annalisa
-and Azzag, Hanane
-and Hacid, Mohand-Said
-and Hadjali, Allel
-and Ras, Zbigniew",
-title="Assessing Distance Measures for Change Point Detection in Continual Learning Scenarios",
-booktitle="Foundations of Intelligent Systems",
-year="2024",
-publisher="Springer Nature Switzerland",
-address="Cham",
-pages="260--270",
-abstract="Detecting relevant change points in time-series data is a necessary task in various applications. Change point detection methods are effective techniques for discovering abrupt changes in data streams. Although prior work has explored the effectiveness of different algorithms on real-world data, little has been done to explore the impact of different distance measures on change detection performance. In this paper, we modify the architecture of a change point detection workflow to assess the impact of distance measure choices on change detection accuracy and efficiency in continual learning scenarios, where the goal is detecting transitions between tasks or concepts. An experimental evaluation of 41 distance measure across several benchmark datasets demonstrated that the change detection accuracy depends on the distance measure selected. Furthermore, our analysis showed performance patterns for distance measures in the same family.",
-isbn="978-3-031-62700-2"
+  author="Coil, Collin and Corizzo, Roberto",
+  editor="Appice, Annalisa and Azzag, Hanane and Hacid, Mohand-Said and Hadjali, Allel and Ras, Zbigniew",
+  title="Assessing Distance Measures for Change Point Detection in Continual Learning Scenarios",
+  booktitle="Foundations of Intelligent Systems",
+  year="2024",
+  publisher="Springer Nature Switzerland",
+  address="Cham",
+  pages="260--270",
+  isbn="978-3-031-62700-2"
 }
